@@ -12,8 +12,9 @@ public class ConnectionManager {
     private static Connection connection;
     private static Properties properties;
 
-    public void init() {
+    public static void init() {
         loadProperties();
+        loadDriver();
     }
 
     private static void loadProperties() {

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static by.itclass.constants.JspConstants.MESSAGE_ATTR;
+import static by.itclass.constants.JspConstants.MESSAGE_ATTRIBUTE;
 
 public abstract class AbstractController extends HttpServlet {
     @Override
@@ -21,7 +21,7 @@ public abstract class AbstractController extends HttpServlet {
 
     public void forward(HttpServletRequest req, HttpServletResponse resp, String url, String message)
             throws ServletException, IOException {
-        req.setAttribute(MESSAGE_ATTR, message);
+        req.setAttribute(MESSAGE_ATTRIBUTE, message);
         forward(req, resp, url);
     }
 }
