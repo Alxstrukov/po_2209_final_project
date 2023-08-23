@@ -8,7 +8,8 @@ import java.util.Properties;
 public class ConnectionManager {
     private static final String DRIVER = "driver";
     private static final String URL = "url";
-    private static final String DB_FILE_PROPS = "data_base.properties";
+    private static final String DB_FILE_PROPS = "database.properties";
+    private static final String DB_FILE_PROPS_2 = "database.properties";
     private static Connection connection;
     private static Properties properties;
 
@@ -23,7 +24,8 @@ public class ConnectionManager {
 
     private static void loadDriver() {
         try {
-            Class.forName(properties.getProperty("driver"));//передаем ключ в проперти, по которому достанем строчку
+           Class.forName(properties.getProperty("driver"));//передаем ключ в проперти, по которому достанем строчку
+           // Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -32,5 +34,7 @@ public class ConnectionManager {
     public static Connection getConnection() throws SQLException {
         return connection == null || connection.isClosed()
                 ? DriverManager.getConnection(properties.getProperty(URL), properties) : connection;
+        /*return connection == null || connection.isClosed()
+                ? DriverManager.getConnection("jdbc:mysql://localhost:3306/po_2209", "root", "") : connection;*/
     }
 }

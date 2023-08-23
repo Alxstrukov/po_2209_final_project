@@ -18,12 +18,6 @@ import static by.itclass.constants.JspConstants.*;
 
 @WebServlet(name = "loginController", urlPatterns = LOGIN_CONTROLLER)
 public class LoginController extends AbstractController {//наследуемся (extends) от нами созданного абстрактного класса
-    protected UserService userService;
-
-    @Override
-    public void init() throws ServletException {
-        userService = UserService.getInstance();
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
