@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+<jsp:include page="<%=JspConstants.MENU_JSP%>"/>
+<img class="default-image" src="/img/pizza-dinner.jpg" alt="pizza"/>
 <div class="form-box">
     <h2>Registration</h2>
     <form method="post" action="<c:url value="<%= AppConstants.REGISTRATION_CONTROLLER%>"/>">

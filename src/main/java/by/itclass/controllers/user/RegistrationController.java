@@ -21,8 +21,8 @@ public class RegistrationController extends AbstractController {
         String name = req.getParameter(NAME_PARAM);
         String password = req.getParameter(PASS_PARAM);
         String email = req.getParameter(EMAIL_PARAM);
-
         User user = new User(login, name, email);
+
         if (userService.addUser(user, password)) {
             redirect(resp, LOGIN_JSP);
         }else {

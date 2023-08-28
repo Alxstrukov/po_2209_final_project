@@ -9,7 +9,6 @@ public class ConnectionManager {
     private static final String DRIVER = "driver";
     private static final String URL = "url";
     private static final String DB_FILE_PROPS = "database.properties";
-    private static final String DB_FILE_PROPS_2 = "database.properties";
     private static Connection connection;
     private static Properties properties;
 
@@ -24,8 +23,8 @@ public class ConnectionManager {
 
     private static void loadDriver() {
         try {
-           Class.forName(properties.getProperty("driver"));//передаем ключ в проперти, по которому достанем строчку
-           // Class.forName("com.mysql.cj.jdbc.Driver");
+            // Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(properties.getProperty("driver"));//передаем ключ в проперти, по которому достанем строчку
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

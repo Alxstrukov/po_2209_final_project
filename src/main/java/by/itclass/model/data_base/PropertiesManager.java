@@ -16,6 +16,6 @@ public class PropertiesManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return properties;
     }
 }
