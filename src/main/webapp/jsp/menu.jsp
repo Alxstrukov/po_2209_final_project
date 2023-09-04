@@ -9,10 +9,10 @@
             <li class="user == null">
                 <a class="active" href="<c:url value="<%= JspConstants.INDEX_JSP%>"/>">Index</a>
             </li>
-            <li class="nav-li" >
+            <li class="nav-li">
                 <a href="<c:url value="<%= JspConstants.LOGIN_JSP%>"/>">Login</a>
             </li>
-            <li class="nav-li" >
+            <li class="nav-li">
                 <a href="<c:url value="<%= JspConstants.REGISTRATION_JSP%>"/>">Registration</a>
             </li>
         </c:when>
@@ -26,8 +26,11 @@
             <li class="nav-li float-left">
                 <a href="<c:url value="<%= AppConstants.DRINKS_MENU%>"/>">Drinks</a>
             </li>
-            <li class="nav-li" >
+            <li class="nav-li">
                 <a href="<c:url value="<%= AppConstants.LOGOUT_CONTROLLER%>"/>">Logout</a>
+            </li>
+            <li class="nav-li">
+                <a href="<c:url value="<%= JspConstants.CART_JSP%>" />">Cart</a>
             </li>
         </c:otherwise>
     </c:choose>

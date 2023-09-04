@@ -1,6 +1,7 @@
 package by.itclass.controllers;
 
 import by.itclass.model.services.food.FoodService;
+import by.itclass.model.services.order.CartService;
 import by.itclass.model.services.user.UserService;
 
 import javax.servlet.ServletException;
@@ -14,11 +15,13 @@ import static by.itclass.constants.JspConstants.MESSAGE_ATTRIBUTE;
 public abstract class AbstractController extends HttpServlet {
     protected UserService userService;
     protected FoodService foodService;
+    protected CartService cartService;
 
     @Override
     public void init() throws ServletException {
         userService = UserService.getInstance();
         foodService = FoodService.getInstance();
+        cartService = CartService.getInstance();
     }
 
     @Override
