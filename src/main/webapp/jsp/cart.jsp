@@ -32,7 +32,7 @@
                 </c:forEach>
                 <div class="order-container">
                     <form method="post" action="<c:url value="<%=AppConstants.ORDER_CONTROLLER%>"/>">
-                        <input name="<%=JspConstants.ADDRESS_PARAM%>>" placeholder="Please enter address" required>
+                        <input name="<%=JspConstants.ADDRESS_PARAM%>" placeholder="Please enter address" required>
                         <input type="submit" value="Submit order">
                     </form>
                     <c:if test="${not empty message}">

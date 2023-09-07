@@ -13,17 +13,6 @@ import java.util.List;
 import static by.itclass.constants.DBConstants.*;
 
 public class FoodDao {
-    private static FoodDao dao;
-
-    public FoodDao() {
-        ConnectionManager.init();
-    }
-
-    public static FoodDao getInstance() {
-        return dao == null
-                ? new FoodDao()
-                : dao;
-    }
 
     public List<FoodItem> getFoodByType(int foodType) {
         List<FoodItem> items = new ArrayList<>();

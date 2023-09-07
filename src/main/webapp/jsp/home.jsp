@@ -10,6 +10,9 @@
 <body>
     <jsp:include page="<%=JspConstants.MENU_JSP%>"/>
     <h2>Hello ${user.name}</h2>
+    <c:if test="${not empty message}">
+        <h2>${message}</h2>
+    </c:if>
     <c:if test="${not empty pizzas}">
         <h2>Today we propose next Pizzas...</h2>
         <c:forEach var="pizza" items="${pizzas}">

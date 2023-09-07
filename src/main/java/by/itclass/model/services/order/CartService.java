@@ -1,6 +1,7 @@
 package by.itclass.model.services.order;
 
 import by.itclass.model.entities.order.OrderItem;
+import by.itclass.model.services.IService;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -8,14 +9,7 @@ import java.util.List;
 
 import static by.itclass.constants.JspConstants.ORDER_ITEMS_ATTRIBUTE;
 
-public class CartService {
-    private static CartService service;
-
-    public static CartService getInstance() {
-        return service == null
-                ? new CartService()
-                : service;
-    }
+public class CartService implements IService {
 
     public List<OrderItem> processCart(HttpSession session, String cartAction, OrderItem item) {
         List<OrderItem> items = session.getAttribute(ORDER_ITEMS_ATTRIBUTE) != null

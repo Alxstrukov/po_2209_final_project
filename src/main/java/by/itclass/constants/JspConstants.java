@@ -21,6 +21,9 @@ public class JspConstants {
     public static final String PIZZAS_ATTRIBUTE = "pizzas";
     public static final String DRINKS_ATTRIBUTE = "drinks";
     public static final String ORDER_ITEMS_ATTRIBUTE = "orderItems";
+    public static final String ORDER_ID_ATTRIBUTE = "orderId";
+    public static final String ORDERS_ATTRIBUTE = "orders";
+    public static final String ORDERS_RECEIPT_ATTRIBUTE = "orderReceipt";
 
     public static final String LOGIN_JSP = "/jsp/login.jsp";
     public static final String HOME_JSP = "/jsp/home.jsp";
@@ -28,4 +31,6 @@ public class JspConstants {
     public static final String MENU_JSP = "/jsp/menu.jsp";
     public static final String REGISTRATION_JSP = "/jsp/registration.jsp";
     public static final String CART_JSP = "/jsp/cart.jsp";
+    public static final String ORDERS_JSP = "/jsp/orders.jsp";
+    public static final String RECEIPT_JSP = "/jsp/receipt.jsp";
 }

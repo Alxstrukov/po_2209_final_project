@@ -11,15 +11,6 @@ import java.sql.SQLException;
 import static by.itclass.constants.DBConstants.*;
 
 public class UserDao {
-    private static UserDao dao;
-
-    public UserDao() {
-        ConnectionManager.init();
-    }
-
-    public static UserDao getInstance() {
-        return dao == null ? new UserDao() : dao;//создаем подключение к БД и сразу объект dao
-    }
 
     public User getUser(String login, String password) {
         try (Connection connection = ConnectionManager.getConnection();
@@ -42,11 +33,17 @@ public class UserDao {
     public boolean addUser(User user, String password) {
         try (Connection connection = ConnectionManager.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USER);
+            if (isAccessible(user.getLogin())) {
+                preparedStatement.setString(1, user.getLogin());
+                preparedStatement.setString(2, user.getName());
+                preparedStatement.setString(3, password);
+                preparedStatement.setString(4, user.getEmail());
+                return (preparedStatement.executeUpdate() > 0);
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        //заглушка фолсе
         return false;
     }
 

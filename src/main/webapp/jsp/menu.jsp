@@ -32,6 +32,9 @@
             <li class="nav-li">
                 <a href="<c:url value="<%= JspConstants.CART_JSP%>" />">Cart</a>
             </li>
+            <li class="nav-li">
+                <a href="<c:url value="<%= AppConstants.ORDERS_HISTORY_CONTROLLER%>"/>">Orders</a>
+            </li>
         </c:otherwise>
     </c:choose>
 </ul>

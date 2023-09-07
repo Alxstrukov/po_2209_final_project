@@ -1,8 +1,11 @@
 package by.itclass.controllers.order;
 
-import by.itclass.controllers.AbstractController;
+import by.itclass.controllers.abstraction.AbstractController;
 import by.itclass.model.entities.food.FoodItem;
 import by.itclass.model.entities.order.OrderItem;
+import by.itclass.model.services.ServiceFactory;
+import by.itclass.model.services.ServiceType;
+import by.itclass.model.services.order.CartService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +20,13 @@ import static by.itclass.constants.JspConstants.*;
 
 @WebServlet(name = "cartController", urlPatterns = CART_CONTROLLER)
 public class CartController extends AbstractController {
+    private CartService cartService;
+
+    @Override
+    public void init() throws ServletException {
+        cartService = (CartService) ServiceFactory.getInstance(ServiceType.CART_SERVICE);
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter(FOOD_ID_PARAM));
@@ -37,7 +47,7 @@ public class CartController extends AbstractController {
 
         if ("addToCart".equals(cartAction)) {
             redirectToMenuPage(resp, foodType);
-        }else{
+        } else {
             redirect(resp, CART_JSP);
         }
     }

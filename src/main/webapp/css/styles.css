@@ -150,6 +150,37 @@ input[type=number] {
     cursor: pointer;
 }
 
+.order-list-container {
+    background-color: lightgray;
+}
+
+.order-list-container input[type=submit] {
+    width: 200px;
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    margin: 0 0 20px 20px;
+    cursor: pointer;
+}
+
+.receipt-container {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    background-color: lightgray;
+    border: 1px solid black;
+    padding: 20px;
+    display: inline-block;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+
+
 
 
 

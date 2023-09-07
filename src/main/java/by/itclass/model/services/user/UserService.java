@@ -2,17 +2,13 @@ package by.itclass.model.services.user;
 
 import by.itclass.model.dao.user.UserDao;
 import by.itclass.model.entities.user.User;
+import by.itclass.model.services.IService;
 
-public class UserService {
-    private static UserService service;
+public class UserService implements IService {
     private UserDao dao;
 
     public UserService() {
-        dao = UserDao.getInstance();//создаем объект dao или же получаем его если он уже есть(был создан заранее)
-    }
-
-    public static UserService getInstance() {
-        return service == null ? new UserService() : service;
+        dao = new UserDao();
     }
 
     public User getUser(String login, String password) {

@@ -1,28 +1,23 @@
-package by.itclass.controllers;
+package by.itclass.controllers.abstraction;
 
+import by.itclass.model.entities.order.Order;
 import by.itclass.model.services.food.FoodService;
 import by.itclass.model.services.order.CartService;
+import by.itclass.model.services.order.OrderService;
 import by.itclass.model.services.user.UserService;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 import static by.itclass.constants.JspConstants.MESSAGE_ATTRIBUTE;
 
+@WebServlet(name = "abstractController")
 public abstract class AbstractController extends HttpServlet {
-    protected UserService userService;
-    protected FoodService foodService;
-    protected CartService cartService;
-
-    @Override
-    public void init() throws ServletException {
-        userService = UserService.getInstance();
-        foodService = FoodService.getInstance();
-        cartService = CartService.getInstance();
-    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -44,6 +39,8 @@ public abstract class AbstractController extends HttpServlet {
         resp.sendRedirect(getServletContext().getContextPath() + url);
 
     }
+
+
 
 
 }

@@ -1,6 +1,6 @@
 package by.itclass.controllers.user;
 
-import by.itclass.controllers.AbstractController;
+import by.itclass.controllers.abstraction.AbstractController;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
